@@ -1,0 +1,30 @@
+<html>
+<body>
+        <script src="../js/sha256.js"></script>
+<h2>Sign In</h2>
+
+<form action="../server/login.php" method="POST">
+
+Username: <input type="text" name="username" id="username">
+<br/><br/>
+
+password: <input type="password" name="password" id="password">
+<br/><br/>
+<a style="padding-right: 30px;" href="./register.html" > Register User </a>
+<button type="submit" onclick="hash()">Submit to Login</button>
+</form>
+
+<script type="text/javascript">
+	// Demo code
+	function hash() {
+			var input = document.getElementById('password').value;
+			var hash = SHA256.hash(input);	
+			console.log(hash)		
+			document.getElementById("password").value = hash;
+		}
+
+</script>
+
+</body>
+</html>
+

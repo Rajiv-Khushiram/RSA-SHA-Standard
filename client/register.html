@@ -1,0 +1,45 @@
+<html>
+<body>
+
+	
+	<!-- refer to the js file, which contains sha256 hash function-->
+	<script src="../js/sha256.js"></script>
+
+	<div>
+
+<h2>Register User</h2>
+<div>
+<form action="../server/register.php" method="POST">
+
+Username: <input type="text" place holder=
+"enter text" name="username" id="username">
+<br/><br/>
+
+Password: <input type="password" name="password" id="password">
+<br/><br/>
+
+<!-- <button id="submit" type="submit" disabled="">Please enter at least 6 characters password</button>
+<br>style="float:right;"
+-->
+
+<div>
+<a style="padding-right: 50px;" href="./login.html" > Have an Account? </a>
+<button  type="submit" onclick="hash()">Register</button>
+</div>
+</form>
+</div>
+</body>
+
+<script type="text/javascript">
+	// Demo code
+	function hash() {
+			var input = document.getElementById('password').value;
+			var hash = SHA256.hash(input);	
+			console.log(hash)		
+			document.getElementById("password").value = hash;
+		}
+
+</script>
+
+</html>
+
